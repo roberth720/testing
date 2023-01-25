@@ -8,6 +8,9 @@ def store(request):
         customer = request.user.customer
         cart, created = Cart.objects.get_or_create(customer = customer, completed = False)
         cartitems = cart.cartitems_set.all()
+    else:
+        cartitems = []
+        cart = {"get_cart_total": 0, "get_itemtotal": 0}
     banner = BannerProduct.objects.all()
     products = Product.objects.all()
     return render (request, 'store.html', {'products': products, 'cart': cart, 'banner': banner})
