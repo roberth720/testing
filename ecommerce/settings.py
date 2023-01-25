@@ -134,3 +134,5 @@ MEDIA_ROOT = BASE_DIR / 'static/image'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 SECURE_CROSS_ORIGIN_OPENER_POLICY='same-origin-allow-popups'
+
+CSRF_TRUSTED_ORIGINS = ['https://web-production-6e68.up.railway.app']
