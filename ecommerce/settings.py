@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-)8o(3td+akwkhohylfd86c+&ifglvvr!4tqw7h1cwsj!fs-@6+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['luxueyfragrance.up.railway.app','web-production-6e68.up.railway.app', '127.0.0:1']
+ALLOWED_HOSTS = ['luxuryfragrance.up.railway.app','web-production-6e68.up.railway.app', '127.0.0:1']
 
 
 # Application definition
@@ -135,4 +135,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 SECURE_CROSS_ORIGIN_OPENER_POLICY='same-origin-allow-popups'
 
-CSRF_TRUSTED_ORIGINS = ['https://web-production-6e68.up.railway.app', 'https://luxueyfragrance.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://web-production-6e68.up.railway.app', 'https://luxuryfragrance.up.railway.app']
