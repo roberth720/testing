@@ -4,17 +4,18 @@
     box-sizing: border-box;
 }
 
-.navbar-nav{
+/* .navbar-nav{
     width: 800px !important;
     justify-content: space-between !important;
 }
 .me-auto{
-    /* margin-right: 30px !important; */
-    margin-left: 5rem !important;
+    margin-right: 30px !important;
+    margin-left: 0rem !important;
 }
 .navbar-brand{
-    margin-left: 7rem;
-}
+    margin-left: 1rem;
+} */
+
 .container-fluid{
     display: flex !important;
     justify-content: space-evenly;
@@ -74,6 +75,11 @@
 }
 .hidden{
     display: none;
+}
+
+.nav-item{
+    margin-left: 20px;
+    margin-right: 20px; 
 }
 
 .section-heading {

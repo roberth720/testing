@@ -1,0 +1,49 @@
+{%extends 'store.html'%}
+
+
+{%block content%}
+  
+
+<div class="container text-center row row-cols-1">
+    <div class="row">
+        {% if search_perfume %}
+        {%for product in search_perfume %}
+
+
+        <div class="container text-center" style="display: block;">
+            <div class="row">
+              <div class="col">
+                
+              </div>
+              <div class="col">
+                
+                <div class="card" style="width: 18rem;">
+                    <img src="{{product.image.url}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{product.name}}</h5>
+                      <p class="card-text">R${{product.price}}</p>
+                      <a href="{% url 'productinfo' product.id %}" class="card-text">saiba mais</a>
+                      <a class="btn btn-warning addtocart" data-action="add" data-product = "{{product.id}}" >Adicionar ao Carrinho</a>
+                    </div>
+                  </div>
+
+              </div>
+              <div class="col">
+                
+              </div>
+            </div>
+          </div>
+
+
+
+      {%endfor%}
+      {% else %}
+      <div class = 'row'>
+          <h3>Produto não disponivel</h3>
+      </div>
+      {% endif %}
+
+    </div>
+  </div>
+
+{%endblock%}

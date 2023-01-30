@@ -57,3 +57,11 @@ def updateQuantity(request):
     product.quantity = quantityFieldValue
     product.save()
     return JsonResponse("Quantity updated", safe = False)
+
+def productinfo(request, product_id):
+    product_info = Product.objects.get(id=product_id)
+    return render(request, 'productinfo.html', {'product_info':product_info})
+
+def search(request):
+    search_perfume = Product.objects.filter(name__icontains = request.POST.get('name_of_perfume'))
+    return render (request, 'search.html', {'search_perfume': search_perfume})

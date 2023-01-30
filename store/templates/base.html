@@ -1,6 +1,6 @@
 {%load static%}
 <!doctype html>
-<html lang="en">
+<html lang="en" style="height: 100%;">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,12 +31,12 @@
             
         </script>
     </head>
-  <body style="background-color: rgb(255, 253, 240);">
+  <body style="background-color: rgb(255, 253, 240); height: 100%; display: flex; flex-direction: column;">
 
     <!-- >>>>>>>>>>>> NAVBAR <<<<<<<<<<<< -->
-    <nav class="navbar navbar-expand-lg">
+    <!-- <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-          <!-- <a class="navbar-brand" href="#"><h2><strong>Shoppit</strong></h2></a> -->
+          <a class="navbar-brand" href="#"><h2><strong>Shoppit</strong></h2></a>
           <a class="navbar-brandd" href="{% url 'store' %}">  
             <img src="{% static 'image/logo.png' %}" alt="Bootstrap" width="70" height="70">
           </a>
@@ -63,13 +63,69 @@
             
           </div>
         </div>
-      </nav>
+      </nav> -->
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brandd" href="{% url 'store' %}">  
+          <img src="{% static 'image/logo.png' %}" alt="Bootstrap" width="70" height="70">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'store' %}"><h5>Home</h5></a>
+            </li>
+
+            <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <h5>Dropdown</h5>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li> -->
+
+          </ul>
+          <form class="d-flex" role="search" method="POST" action="{% url 'search' %}">
+            <!-- <input class="form-control me-2" type="search" placeholder="Nome do perfume" aria-label="Search" style="border-radius: 30px;"> -->
+            {% csrf_token %}
+            {{search_form.name_of_perfume}}
+            <button class="btn btn-warning" type="submit" style="border-radius: 30px;">Pesquisar</button>
+          </form>
+    
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'cart' %}"><h5>Olá, {{user}}</h5></a>
+          </li>
+        </ul>
+          
+        </ul>
+        <form class="d-flex">
+          <a href = "{% url 'cart' %}">
+            <div class ='cart_container'>
+            <img src = "{% static 'image/cart1.png' %}">
+            <div class = 'cart-item-count'><h4>{{cart.get_itemtotal}}</h4></div>
+        </div>
+      </a> 
+        </form>
+    
+        </div>
+      </div>
+    </nav>
+          <!-- END NAVBAR -->
 
     {%block content%}
     
     {%endblock%}
 
-    <footer class="footer bg-light" style="padding-top: 4rem; padding-bottom: 4rem;">
+    <footer class="footer bg-light" style="padding-top: 4rem; padding-bottom: 4rem; display: block;">
       <div class="container">
           <div class="row">
               <div class="col-lg-6 h-100 text-center text-lg-start my-auto">

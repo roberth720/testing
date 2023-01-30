@@ -14,6 +14,7 @@ class Product(models.Model):
     name = models.CharField(max_length=50)
     price = models.FloatField(default=10.55)
     image = models.ImageField()
+    description_product = models.CharField(max_length=500)
 
     def __str__(self):
         return self.name
@@ -71,3 +72,8 @@ class BannerProduct(models.Model):
 
     def __str__(self):
         return self.title
+
+class Perfume_search(models.Model):
+    name_of_perfume = models.CharField(max_length=100)
+    def __str__(self):
+        return self.name_of_perfume
